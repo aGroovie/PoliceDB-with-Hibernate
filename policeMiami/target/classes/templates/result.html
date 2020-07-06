@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Police DataBase</title>
+</head>
+<body>
+
+        <h2>Prisoners</h2>
+        <table cellspacing="2" border="1" cellpadding="5" width="600">
+            <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>State</th>
+                <th>Age</th>
+                <th>Gender</th>
+                <th>Delete Prisoner</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="person : ${personList}">
+                <td th:text="${person.id}"></td>
+                <td th:text="${person.name}"></td>
+                <td th:text="${person.state}"></td>
+                <td th:text="${person.age}"></td>
+                <td th:text="${person.Gender}"></td>
+                <td><a th:href="@{deletePersonById/{id}(id=${person.id})}">Delete</a></td>
+
+            </tr>
+            <p><a href="/registration">Create Prisoner</a></p>
+            <p><a href="/registration-prison">Create Prison</a></p>
+            </tbody>
+        </table>
+</body>
+</html>

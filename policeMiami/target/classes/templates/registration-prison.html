@@ -1,0 +1,21 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Create user</title>
+</head>
+<body>
+<form action="/savePrison" th:object="${prison}" method="post">
+    <label for="prisonId">PrisonNumber</label>
+    <input type="text" th:field="*{prisonId}" id="prisonId" placeholder="PrisonNumber">
+    <label for="prisonAddress">PrisonAddress</label>
+    <input type="text" th:field="*{prisonAddress}" id="prisonAddress" placeholder="PrisonAddress">
+    <label for="prisonGender">PrisonGender</label>
+    <input type="text" th:field="*{prisonGender}" id="prisonGender" placeholder="PrisonGender">
+    <label for="prisonType">PrisonType</label>
+    <input type="text" th:field="*{prisonType}" id="prisonType" placeholder="PrisonType">
+    <input type="submit" value="Save">
+</form>
+</body>
+</html>

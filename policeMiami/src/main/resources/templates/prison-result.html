@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>Prison</h2>
+<table cellspacing="2" border="1" cellpadding="5" width="600">
+    <thead>
+    <tr>
+        <th>Prison Number</th>
+        <th>Prison Address</th>
+        <th>Prison Gender</th>
+        <th>Prison Type</th>
+        <th>Delete Prison </th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="prison : ${prisonList}">
+        <td th:text="${prison.prisonId}"></td>
+        <td th:text="${prison.prisonAddress}"></td>
+        <td th:text="${prison.prisonGender}"></td>
+        <td th:text="${prison.prisonType}"></td>
+        <td><a th:href="@{deletePrisonById/{id}(id=${prison.prisonId})}">Delete</a></td>
+
+    </tr>
+
+    </tbody>
+</table>
+<p><a href="/registration">Create Prisoner</a></p>
+<p><a href="/registration-prison">Add new Prison</a></p>
+</body>
+</html>
